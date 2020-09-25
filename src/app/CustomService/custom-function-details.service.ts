@@ -12,7 +12,7 @@ export class CustomFunctionDetailsService {
   private url:string = "http://localhost:60241/api/FunctionDetails";
 
   http:HttpClient;
-  fd:CustomFunctionDetails;
+  
 
   constructor(http:HttpClient) {
     this.http = http;

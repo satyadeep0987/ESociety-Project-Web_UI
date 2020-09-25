@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,8 @@ import { FunctionCategoryComponent } from './Components/function-category/functi
 import { FunctionDetailsComponent } from './Components/function-details/function-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { OwnerComponent } from './Components/owner/owner.component';
+import { NearServiceCategoryComponent } from './Components/near-service-category/near-service-category.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FunctionCategoryComponent,
     FunctionDetailsComponent,
     NavbarComponent,
+    OwnerComponent,
+    NearServiceCategoryComponent,
     
     
   ],
@@ -25,7 +29,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
