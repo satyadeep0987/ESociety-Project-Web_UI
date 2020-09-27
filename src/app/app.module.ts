@@ -14,6 +14,7 @@ import { NearServiceCategoryComponent } from './Components/near-service-category
 import { HouseComponent } from './Components/house/house.component';
 import { SocietyComponent } from './Components/society/society.component';
 import { GuardDutyComponent } from './Components/guard-duty/guard-duty.component';
+import { ParkingDetailsComponent } from './Components/parking-details/parking-details.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { GuardDutyComponent } from './Components/guard-duty/guard-duty.component
     HouseComponent,
     SocietyComponent,
     GuardDutyComponent,
+    ParkingDetailsComponent,
     
     
   ],

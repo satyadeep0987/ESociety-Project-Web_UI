@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+
+<div [hidden]="display">
+    <h2>DISPLAYING ALL VISITORS PARKING</h2>
+
+
+<table border="1" style="background-color: aquamarine;">
+    <tr>
+            <td>Parking ID</td>
+            <td>Vehilce No</td>
+            <td>Visitor ID</td>
+            
+            <td>Parking Slot</td>
+            
+    </tr>
+    <tr *ngFor="let item of res">
+           <td>{{item.Parking_ID}}</td>
+           <td>{{item.Vechile_Number}}</td>
+           <td>{{item.Visitor_ID}}</td>
+           <td>{{item.Parking_Slot}}</td>          
+    </tr>
+</table>
+
+
+</div>
+
+<div [hidden]="insert">
+    <h2>INSERTING NEW PARKING</h2>
+
+<from [formGroup]="newparking">
+    <table border="1" style="background-color: aquamarine;">
+        <tr>
+            <td>Vehicle No</td>
+            <td><input type="text" formControlName="vehno"></td>
+            <td><span *ngIf = "newparking.controls['vehno'].hasError('required')">Vehicle No is compulsory</span></td>
+        </tr>
+        <tr>
+            <td>Visitor ID</td>
+            <td><input type="number" formControlName="vid"></td>
+            <td><span *ngIf = "newparking.controls['vid'].hasError('required')">Visitor ID is compulsory</span></td>
+        </tr>
+        <tr>
+            <td>Slot ID</td>
+            <td><select formControlName="sid" >
+                <option>select</option>
+                <option *ngFor="let item of slots">{{item.Slot_ID}}</option>
+            </select></td>
+            <td><span *ngIf = "newparking.controls['sid'].hasError('required')">Slot ID is compulsory</span></td>
+        </tr>
+       
+        <tr>
+            <td><button type="button" [disabled]="newparking.invalid" (click)="AddNewParking()">Insert</button></td>
+        </tr>
+    </table>
+</from>
+</div>
+
+<div [hidden]="update">
+    <h2>UPDATING PARKING DETAILS</h2>
+
+<form >
+    <table border="1" style="background-color: aquamarine;">
+        <tr>
+            <td>Enter Parking ID</td>
+            <td><input type="number" name="id" #id/></td>
+            
+        </tr>
+        <tr>
+            <button type="button" (click)="SearchParking(id.value)">Get Details</button>
+        </tr>
+        <tr>
+            <td>Vehicle No</td>
+            <td><input type="text" name='Vno' [(ngModel)]="pd1.Vechile_Number"  #Vno="ngModel"  ></td>
+        </tr>
+        <tr>
+            <td>Visitor ID</td>
+            <td><input type="number" name="vid" [(ngModel)]="pd1.Visitor_ID"  #vid='ngModel' readonly></td>
+        </tr>
+     
+        <tr>
+            <td><button type="button"  (click)="UpdateParking()">Update</button></td>
+        </tr>
+    </table>
+</form>
+</div>
+
+
+<div>
+    <button type="button" (click)="Display()">Display All Parking</button>
+    <button type="button" (click)="Insert()">Insert New Parking</button>
+    <button type="button" (click)="Update()">Update Parking Info</button>
+</div>
