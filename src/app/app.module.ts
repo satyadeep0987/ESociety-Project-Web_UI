@@ -11,6 +11,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OwnerComponent } from './Components/owner/owner.component';
 import { NearServiceCategoryComponent } from './Components/near-service-category/near-service-category.component';
+import { HouseComponent } from './Components/house/house.component';
+import { SocietyComponent } from './Components/society/society.component';
+import { GuardDutyComponent } from './Components/guard-duty/guard-duty.component';
+import { ParkingDetailsComponent } from './Components/parking-details/parking-details.component';
 
 
 @NgModule({
@@ -21,6 +25,10 @@ import { NearServiceCategoryComponent } from './Components/near-service-category
     NavbarComponent,
     OwnerComponent,
     NearServiceCategoryComponent,
+    HouseComponent,
+    SocietyComponent,
+    GuardDutyComponent,
+    ParkingDetailsComponent,
     
     
   ],
