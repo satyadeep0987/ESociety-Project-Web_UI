@@ -15,6 +15,10 @@ import { HouseComponent } from './Components/house/house.component';
 import { SocietyComponent } from './Components/society/society.component';
 import { GuardDutyComponent } from './Components/guard-duty/guard-duty.component';
 import { ParkingDetailsComponent } from './Components/parking-details/parking-details.component';
+import { ServiceCategoryComponent } from './Components/service-category/service-category.component';
+import { AdditionalFacilityDetailsComponent } from './Components/additional-facility-details/additional-facility-details.component';
+import { UserServiceDetailsComponent } from './Components/user-service-details/user-service-details.component';
+import { NearbyServicesComponent } from './Components/nearby-services/nearby-services.component';
 
 
 @NgModule({
@@ -29,6 +33,10 @@ import { ParkingDetailsComponent } from './Components/parking-details/parking-de
     SocietyComponent,
     GuardDutyComponent,
     ParkingDetailsComponent,
+    ServiceCategoryComponent,
+    AdditionalFacilityDetailsComponent,
+    UserServiceDetailsComponent,
+    NearbyServicesComponent,
     
     
   ],

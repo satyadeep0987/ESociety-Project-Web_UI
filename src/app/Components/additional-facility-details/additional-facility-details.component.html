@@ -1,0 +1,152 @@
+<app-navbar></app-navbar>
+    
+<div class="container">
+    <h2 >Additional Facility</h2>
+    <div class="row">
+    <div class="col-10"  [hidden]="showed">  
+        <table class="table" >
+            <thead>
+                <tr>
+                    <th scope="col">Additional FAcility ID</th>
+                    <th scope="col">Additional FAcility Name</th>
+                    <th scope="col">Additional FAcility Contact</th>
+                    <th scope="col">Additional FAcility Address</th>
+                    <th scope="col">Additional FAcility Avalbility</th>
+                    <th scope="col">Additional FAcility Charges</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of result">
+                    <th scope="row">{{u.Facility_ID}}</th>
+                    <td>{{u.Facility_Name}}</td>
+                    <td>{{u.Facility_Contact}}</td>
+                    <td>{{u.Facility_Address}}</td>
+                    <td>{{u.Facility_Availability}}</td>
+                    <td>Rs.{{u.Facility_Charges}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-10" [hidden]="inser"  >
+        <table class="table">
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <th scope="row" >Enter Name of Additional Facility: </th>
+                    <td><input type="text" name='Name' [(ngModel)]="res.Facility_Name" #Name="ngModel" required/></td>
+                        <td><span *ngIf="Name.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th scope="row" >Enter contact of Additional Facility : </th>
+                    <td><input type="number" name='cnt' [(ngModel)]="res.Facility_Contact" #cnt="ngModel" required/></td>
+                        <td><span *ngIf="cnt.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th scope="row" >Enter Address of Additional Facility: </th>
+                    <td><input type="text" name='addr' [(ngModel)]="res.Facility_Address" #addr="ngModel" required/></td>
+                        <td><span *ngIf="addr.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+
+                <tr>
+                    <th scope="row" >Enter Availability of facility: </th>
+                    <td><input type="number" name='dist' [(ngModel)]="res.Facility_Availability" #dist="ngModel" required/></td>
+                        <td><span *ngIf="dist.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+
+                <tr>
+                    <th scope="row" >Enter Facility Charges: </th>
+                    <td><input type="text" name='Details' [(ngModel)]="res.Facility_Charges" #Details="ngModel" required/></td>
+                        <td><span *ngIf="Details.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+
+                <tr>
+                    <th></th>
+                    <td><button type="button" class="btn btn-dark" (click)="InsertAdd()" >Insert </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-10" [hidden]="updat">
+
+        <form >
+            <h4>Search</h4>
+              <table class="table">
+              
+                  <tbody>
+                  <tr >
+                      <th scope="row">Enter Additional Facility ID :</th>
+                      <td><input type="number" name="id" #id/></td>
+                  </tr>   
+                  <tr>
+                    <th></th>
+                      <td><input type="button" class="btn btn-dark" (click)="GetById(id.value)" value="Search"/></td>
+                  </tr>
+
+                    
+                  </tbody>
+                </table>
+          </form>
+        <table class="table">
+            <thead></thead>
+            <tbody>
+               
+                <tr>
+                    <th scope="row" >Name of Additional Facility: </th>
+                    <td><input type="text" name='UName' [(ngModel)]="upt.Facility_Name" #UName="ngModel" required/></td>
+                        <td><span *ngIf="UName.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th scope="row" >Contact of Additional Facility : </th>
+                    <td><input type="number" name='Ucnt' [(ngModel)]="upt.Facility_Contact" #Ucnt="ngModel" required/></td>
+                        <td><span *ngIf="Ucnt.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th scope="row" >Address of Additional Facility: </th>
+                    <td><input type="text" name='Uaddr' [(ngModel)]="upt.Facility_Address" #Uaddr="ngModel" required/></td>
+                        <td><span *ngIf="Uaddr.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+
+                <tr>
+                    <th scope="row" >Availability of Additional services: </th>
+                    <td><input type="number" name='Udist' [(ngModel)]="upt.Facility_Availability" #Udist="ngModel" required/></td>
+                        <td><span *ngIf="Udist.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+
+                <tr>
+                    <th scope="row" >Charges of additional Facility: </th>
+                    <td><input type="text" name='UDetails' [(ngModel)]="upt.Facility_Charges" #UDetails="ngModel" required/></td>
+                        <td><span *ngIf="UDetails.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><button type="button" class="btn btn-dark" (click)="updateAdditional()" >Update </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="col-2">
+            <div class="row"><button type="button" class="btn btn-warning" (click)="show()">Show Additional Facility Detaiils</button></div>
+            <br/>
+            <div class="row"><button type="button" class="btn btn-success" (click)="insert()">Insert Additional Facility Details</button></div>
+            <br/>
+            <div class="row"><button type="button" class="btn btn-primary" (click)="update()">Update Additional Facility Details</button></div>
+           
+    </div>
+    </div>
+</div>
+
+
+
+
+

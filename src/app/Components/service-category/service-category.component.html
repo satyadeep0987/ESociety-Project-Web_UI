@@ -1,0 +1,90 @@
+<app-navbar></app-navbar>
+    
+<div class="container">
+    <h2 >Service Category</h2>
+    <div class="row">
+    <div class="col-8"  [hidden]="showed">  
+        <table class="table" >
+            <thead>
+                <tr>
+                    <th scope="col">Service Category Id</th>
+                    <th scope="col">Service Category Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of result">
+                    <th scope="row">{{u.Service_Category_ID}}</th>
+                    <td>{{u.Service_Category}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-8" [hidden]="inser"  >
+        <table class="table">
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <th scope="row" >Enter Name of the category: </th>
+                    <td><input type="text" name='Name' [(ngModel)]="res.Service_Category" #Name="ngModel" required/></td>
+                        <td><span *ngIf="Name.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><button type="button" class="btn btn-dark" (click)="InsertCAtegory()" >Insert </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-8" [hidden]="updat">
+
+        <form >
+            <h4>Search</h4>
+              <table class="table">
+              
+                  <tbody>
+                  <tr >
+                      <th scope="row">Enter Service Category ID :</th>
+                      <td><input type="number" name="id" #id/></td>
+                  </tr>   
+                  <tr>
+                    <th></th>
+                      <td><input type="button" class="btn btn-dark" (click)="showServices(id.value)" value="Search"/></td>
+                  </tr>
+
+                    
+                  </tbody>
+                </table>
+          </form>
+        <table class="table">
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Enter Name of the category: </th>
+                    <td><input type="text" name='UName' [(ngModel)]="upt.Service_Category" #UName="ngModel" required/></td>
+                        <td><span *ngIf="UName.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><button type="button" class="btn btn-dark" (click)="UpdateService()" >Update </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="col-4">
+            <div class="row"><button type="button" class="btn btn-warning" (click)="show()">Show Service Cataegory</button></div>
+            <br/>
+            <div class="row"><button type="button" class="btn btn-success" (click)="insert()">Insert Service Cataegory</button></div>
+            <br/>
+            <div class="row"><button type="button" class="btn btn-primary" (click)="update()">Update Service Cataegory</button></div>
+           
+    </div>
+    </div>
+</div>
+
+
+
+
+
