@@ -13,7 +13,6 @@ import { ParkingDetailsComponent } from './Components/parking-details/parking-de
 import { ServiceCategoryComponent } from './Components/service-category/service-category.component';
 import { SocietyComponent } from './Components/society/society.component';
 import { UserServiceDetailsComponent } from './Components/user-service-details/user-service-details.component';
-import { AuthReturnClass } from './CustomClass/auth-return-class';
 import { LoginComponent } from './login/login.component';
 import { MyGuardGuard } from './my-guard.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';

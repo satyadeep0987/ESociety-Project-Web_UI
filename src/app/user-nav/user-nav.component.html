@@ -24,9 +24,10 @@
           <a class="nav-link" routerLink='/'>Contact<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" >{{name}}<span class="sr-only">(current)</span></a>
-          <li class="nav-item" [hidden]="ifpresent">
-            <a class="nav-link" type="button" (click)="logout()">Logout<span class="sr-only">(current)</span></a>
+        <a class="nav-link" >{{name}}<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [hidden]="ifpresent">
+        <a class="nav-link" type="button" (click)="logout()">Logout<span class="sr-only">(current)</span></a>
         </li>
         
       </ul>

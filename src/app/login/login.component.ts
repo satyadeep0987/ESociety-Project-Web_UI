@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   CheckLogin():void{
     if(this.insertAuth.type == 'Admin')
     {
-      console.log(this.insertAuth);
+      //console.log(this.insertAuth);
       this.ath.Login(this.insertAuth).subscribe((data:ReturnClass)=>{
         this.returnAuth = data;
         if(this.returnAuth.msg == true)
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
 
     if(this.insertAuth.type == 'User')
     {
-      console.log(this.insertAuth);
+      //console.log(this.insertAuth);
       this.ath.Login(this.insertAuth).subscribe((data:ReturnClass)=>{
         this.returnAuth = data;
         if(this.returnAuth.msg == true)
@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
           AuthReturnClass.username = this.returnAuth.username;
           AuthReturnClass.Usertype = this.insertAuth.type;
           alert("Login Sucessfull");
-          this.ngZone.run(() => this.router.navigateByUrl('/AdminHome'));
+          this.ngZone.run(() => this.router.navigateByUrl('/Home'));
         }
         else{
           alert("Login Failed")
