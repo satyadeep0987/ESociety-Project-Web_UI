@@ -1,0 +1,165 @@
+<app-navbar></app-navbar>
+    
+<div class="container">
+    <h2 >NearBy Services</h2>
+    <div class="row">
+    <div class="col-10"  [hidden]="showed">  
+        <table class="table" >
+            <thead>
+                <tr>
+                    <th scope="col">Near By Service ID</th>
+                    <th scope="col">Near By Service Category ID</th>
+                    <th scope="col">Near By Service Name</th>
+                    <th scope="col">Near By Service Contact</th>
+                    <th scope="col">Near By Service Address</th>
+                    <th scope="col">Near By Service Distance</th>
+                    <th scope="col">Near By Service Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of result">
+                    <th scope="row">{{u.Nearby_Services_ID}}</th>
+                    <td>{{u.Nearby_Services_Category_ID}}</td>
+                    <td>{{u.Nearby_Services_Name}}</td>
+                    <td>{{u.Nearby_Services_Contact}}</td>
+                    <td>{{u.Nearby_Services_Address}}</td>
+                    <td>{{u.Nearby_Services_Distance}}</td>
+                    <td>{{u.Nearby_Services_Details}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-10" [hidden]="inser"  >
+        <table class="table">
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <th scope="row" >Enter NearBy Service the category: </th>
+                    <td><input type="text" name='cid' [(ngModel)]="res.Nearby_Services_Category_ID" #cid="ngModel" required/></td>
+                        <td><span *ngIf="cid.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th scope="row" >Enter Name of NearBy service: </th>
+                    <td><input type="text" name='Name' [(ngModel)]="res.Nearby_Services_Name" #Name="ngModel" required/></td>
+                        <td><span *ngIf="Name.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th scope="row" >Enter contact of NearBy service : </th>
+                    <td><input type="number" name='cnt' [(ngModel)]="res.Nearby_Services_Contact" #cnt="ngModel" required/></td>
+                        <td><span *ngIf="cnt.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th scope="row" >Enter Address of NearBy Service: </th>
+                    <td><input type="text" name='addr' [(ngModel)]="res.Nearby_Services_Address" #addr="ngModel" required/></td>
+                        <td><span *ngIf="addr.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+
+                <tr>
+                    <th scope="row" >Enter Distance of NearBy Service: </th>
+                    <td><input type="number" name='dist' [(ngModel)]="res.Nearby_Services_Distance" #dist="ngModel" required/></td>
+                        <td><span *ngIf="dist.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+
+                <tr>
+                    <th scope="row" >Enter Details of NearBy Service: </th>
+                    <td><input type="text" name='Details' [(ngModel)]="res.Nearby_Services_Details" #Details="ngModel" required/></td>
+                        <td><span *ngIf="Details.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+
+                <tr>
+                    <th></th>
+                    <td><button type="button" class="btn btn-dark" (click)="InsertNBS()" >Insert </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-10" [hidden]="updat">
+
+        <form >
+            <h4>Search</h4>
+              <table class="table">
+              
+                  <tbody>
+                  <tr >
+                      <th scope="row">Enter NearBy Service Category ID :</th>
+                      <td><input type="number" name="id" #id/></td>
+                  </tr>   
+                  <tr>
+                    <th></th>
+                      <td><input type="button" class="btn btn-dark" (click)="ShowNBS(id.value)" value="Search"/></td>
+                  </tr>
+
+                    
+                  </tbody>
+                </table>
+          </form>
+        <table class="table">
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <th scope="row" >Enter NearBy Service the category: </th>
+                    <td><input type="text" name='Ucid' [(ngModel)]="upt.Nearby_Services_Category_ID" #Ucid="ngModel" required/></td>
+                        <td><span *ngIf="Ucid.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th scope="row" >Enter Name of NearBy service: </th>
+                    <td><input type="text" name='UName' [(ngModel)]="upt.Nearby_Services_Name" #UName="ngModel" required/></td>
+                        <td><span *ngIf="UName.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th scope="row" >Enter contact of NearBy service : </th>
+                    <td><input type="number" name='Ucnt' [(ngModel)]="upt.Nearby_Services_Contact" #Ucnt="ngModel" required/></td>
+                        <td><span *ngIf="Ucnt.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th scope="row" >Enter Address of NearBy Service: </th>
+                    <td><input type="text" name='Uaddr' [(ngModel)]="upt.Nearby_Services_Address" #Uaddr="ngModel" required/></td>
+                        <td><span *ngIf="Uaddr.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+
+                <tr>
+                    <th scope="row" >Enter Distance of NearBy Service: </th>
+                    <td><input type="number" name='Udist' [(ngModel)]="upt.Nearby_Services_Distance" #Udist="ngModel" required/></td>
+                        <td><span *ngIf="Udist.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+
+                <tr>
+                    <th scope="row" >Enter Details of NearBy Service: </th>
+                    <td><input type="text" name='UDetails' [(ngModel)]="upt.Nearby_Services_Details" #UDetails="ngModel" required/></td>
+                        <td><span *ngIf="UDetails.errors?.required">Field cannot be empty</span></td>
+                     
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><button type="button" class="btn btn-dark" (click)="UpdateNBS()" >Update </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="col-2">
+            <div class="row"><button type="button" class="btn btn-warning" (click)="show()">Show Near By Service Cataegory</button></div>
+            <br/>
+            <div class="row"><button type="button" class="btn btn-success" (click)="insert()">Insert Near By Service Cataegory</button></div>
+            <br/>
+            <div class="row"><button type="button" class="btn btn-primary" (click)="update()">Update Near By Service Cataegory</button></div>
+           
+    </div>
+    </div>
+</div>
+
+
+
+
+

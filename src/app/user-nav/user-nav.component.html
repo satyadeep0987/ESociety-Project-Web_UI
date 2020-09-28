@@ -16,24 +16,18 @@
              Services
             </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-right">
-              <a ngbDropdownItem routerLink="/Owner" (click)="$event.preventDefault()">Owner</a>
-              <a ngbDropdownItem routerLink="/House" (click)="$event.preventDefault()">House</a>
-              <a ngbDropdownItem routerLink="/FunctionCategory" (click)="$event.preventDefault()">Function Category</a>
-              <a ngbDropdownItem routerLink="/FunctionDetails" (click)="$event.preventDefault()">Function Details</a>
-              <a ngbDropdownItem routerLink="/NearByServiceCAtegory" (click)="$event.preventDefault()">Near By Services Category</a>
-              <a ngbDropdownItem routerLink="/parking" (click)="$event.preventDefault()">Parking</a>
-              <a ngbDropdownItem routerLink="/Guard" (click)="$event.preventDefault()">guard</a>
-              <a ngbDropdownItem routerLink="/Society" (click)="$event.preventDefault()">society</a>
+              
               <a ngbDropdownItem routerLink="/" (click)="$event.preventDefault()">xyv</a>
             </div>
           </li>
         <li class="nav-item">
           <a class="nav-link" routerLink='/'>Contact<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item form-inline">
-          <a class="nav-link" style="text-align: right;">{{name}}<span class="sr-only">(current)</span></a>
-          <li class="nav-item" [hidden]="ifpresent">
-            <a class="nav-link" (click)="logout()">Logout<span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+        <a class="nav-link" >{{name}}<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [hidden]="ifpresent">
+        <a class="nav-link" type="button" (click)="logout()">Logout<span class="sr-only">(current)</span></a>
         </li>
         
       </ul>
