@@ -4,6 +4,7 @@ import { AdditionalFacilityDetailsComponent } from './Components/additional-faci
 import { FunctionCategoryComponent } from './Components/function-category/function-category.component';
 import { FunctionDetailsComponent } from './Components/function-details/function-details.component';
 import { GuardDutyComponent } from './Components/guard-duty/guard-duty.component';
+import { HomeComponent } from './Components/home/home.component';
 import { HouseComponent } from './Components/house/house.component';
 import { NearServiceCategoryComponent } from './Components/near-service-category/near-service-category.component';
 import { NearbyServicesComponent } from './Components/nearby-services/nearby-services.component';
@@ -12,22 +13,39 @@ import { ParkingDetailsComponent } from './Components/parking-details/parking-de
 import { ServiceCategoryComponent } from './Components/service-category/service-category.component';
 import { SocietyComponent } from './Components/society/society.component';
 import { UserServiceDetailsComponent } from './Components/user-service-details/user-service-details.component';
+import { AuthReturnClass } from './CustomClass/auth-return-class';
+import { LoginComponent } from './login/login.component';
+import { MyGuardGuard } from './my-guard.guard';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserGuardGuard } from './user-guard.guard';
+import { UserHomeComponent } from './UserComponent/user-home/user-home.component';
 
 
-const routes: Routes = [
-  {path:'FunctionCategory',component:FunctionCategoryComponent},
-  {path:'FunctionDetails',component:FunctionDetailsComponent},
-  {path:'Owner',component:OwnerComponent},
-  {path:'NearByServiceCAtegory',component:NearServiceCategoryComponent},
-  {path:'House',component:HouseComponent},
-  {path:'Society',component:SocietyComponent},
-  {path:'Guard',component:GuardDutyComponent},
-  {path:'parking',component:ParkingDetailsComponent},
-  {path:'servicesCategory',component:ServiceCategoryComponent},
-  {path:'UserService',component:UserServiceDetailsComponent},
-  {path:'NaerByServices',component:NearbyServicesComponent},
-  {path:'AdditionalFacility',component:AdditionalFacilityDetailsComponent},
-];
+    const routes: Routes = [
+    {path:'FunctionCategory',component:FunctionCategoryComponent,canActivate: [MyGuardGuard]},
+    {path:'FunctionDetails',component:FunctionDetailsComponent,canActivate: [MyGuardGuard]},
+    {path:'Owner',component:OwnerComponent,canActivate: [MyGuardGuard]},
+    {path:'NearByServiceCAtegory',component:NearServiceCategoryComponent,canActivate: [MyGuardGuard]},
+    {path:'House',component:HouseComponent,canActivate: [MyGuardGuard]},
+    {path:'Society',component:SocietyComponent,canActivate: [MyGuardGuard]},
+    {path:'Guard',component:GuardDutyComponent,canActivate: [MyGuardGuard]},
+    {path:'parking',component:ParkingDetailsComponent,canActivate: [MyGuardGuard]},
+    {path:'servicesCategory',component:ServiceCategoryComponent,canActivate: [MyGuardGuard]},
+    {path:'UserService',component:UserServiceDetailsComponent,canActivate: [MyGuardGuard]},
+    {path:'NaerByServices',component:NearbyServicesComponent,canActivate: [MyGuardGuard]},
+    {path:'AdditionalFacility',component:AdditionalFacilityDetailsComponent,canActivate: [MyGuardGuard]},
+    {path:'AdminHome',component:HomeComponent,canActivate: [MyGuardGuard]},
+    
+    {path:'Home',component:UserHomeComponent,canActivate:[UserGuardGuard]},
+    {path:'Login',component:LoginComponent},
+
+    {path:'',redirectTo:'/Login',pathMatch:'full'},
+    { path: '**', component:PageNotFoundComponent},
+  ];
+
+
+ 
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

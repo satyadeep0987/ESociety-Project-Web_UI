@@ -5,13 +5,12 @@ import { NgForm } from '@angular/forms';
 import {AuthReturnClass} from '../CustomClass/auth-return-class'
 
 
-
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-user-nav',
+  templateUrl: './user-nav.component.html',
+  styleUrls: ['./user-nav.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class UserNavComponent implements OnInit {
 
   navbarOpen = false;
 	public clicked = false;
@@ -63,5 +62,6 @@ export class NavbarComponent implements OnInit {
 			this.ifpresent = false;
 		}
 	}
+
 
 }
