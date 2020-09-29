@@ -39,6 +39,10 @@ export class LoginComponent implements OnInit {
           AuthReturnClass.msg = this.returnAuth.msg;
           AuthReturnClass.username = this.returnAuth.username;
           AuthReturnClass.Usertype = this.insertAuth.type;
+          localStorage.setItem('sessionUsertype',AuthReturnClass.Usertype);
+          localStorage.setItem('sessionUserName',AuthReturnClass.username);
+          localStorage.setItem('sessionUserId',AuthReturnClass.id.toString());
+          
           alert("Login Sucessfull");
           this.ngZone.run(() => this.router.navigateByUrl('/AdminHome'));
         }
@@ -60,6 +64,9 @@ export class LoginComponent implements OnInit {
           AuthReturnClass.msg = this.returnAuth.msg;
           AuthReturnClass.username = this.returnAuth.username;
           AuthReturnClass.Usertype = this.insertAuth.type;
+          localStorage.setItem('sessionUsertype',AuthReturnClass.Usertype);
+          localStorage.setItem('sessionUserName',AuthReturnClass.username);
+          localStorage.setItem('sessionUserId',AuthReturnClass.id.toString());
           alert("Login Sucessfull");
           this.ngZone.run(() => this.router.navigateByUrl('/Home'));
         }

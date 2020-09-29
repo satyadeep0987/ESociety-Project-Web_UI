@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
 		this.clicked = true;
 	}
 
-	name:string = AuthReturnClass.username;
+	name:string = localStorage.getItem('sessionUserName');
 	ngZone:NgZone;
 	Router:Router;
 	ifpresent:boolean;
@@ -51,6 +51,9 @@ export class NavbarComponent implements OnInit {
 		AuthReturnClass.id =null;
 		AuthReturnClass.username = null;
 		AuthReturnClass.msg = null;
+		localStorage.clear();
+	
+		
 		this.ngZone.run(() => this.Router.navigateByUrl('/Login'));
 	}
 

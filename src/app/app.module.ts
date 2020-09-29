@@ -24,6 +24,7 @@ import { UserNavComponent } from './user-nav/user-nav.component';
 import { HomeComponent } from './Components/home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserHomeComponent } from './UserComponent/user-home/user-home.component';
+import {CheckAuthService} from './check-auth.service'
 
 
 @NgModule({
@@ -58,7 +59,9 @@ import { UserHomeComponent } from './UserComponent/user-home/user-home.component
     NgbModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    CheckAuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

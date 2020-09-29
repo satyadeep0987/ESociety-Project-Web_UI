@@ -11,7 +11,7 @@ export class AdditionalFacilityDetailsService {
   private url:string = "http://localhost:60241/api/AdditionalFacilityDetails";
 
   http:HttpClient;
-  ad:AdditionalFacilityDetails;
+ 
 
   constructor(http:HttpClient) {
     this.http = http;
