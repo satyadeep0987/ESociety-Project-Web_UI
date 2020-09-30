@@ -2,3 +2,13 @@
 
 
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+    width: auto;
+    background-image: url("./assets/lt.jpg");
+    background-position: top;
+  }

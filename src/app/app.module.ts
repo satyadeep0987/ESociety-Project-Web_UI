@@ -24,7 +24,11 @@ import { UserNavComponent } from './user-nav/user-nav.component';
 import { HomeComponent } from './Components/home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserHomeComponent } from './UserComponent/user-home/user-home.component';
-import {CheckAuthService} from './check-auth.service'
+import {CheckAuthService} from './check-auth.service';
+import { ProfileComponent } from './UserComponent/profile/profile.component';
+import { HostFunctionComponent } from './UserComponent/host-function/host-function.component';
+import { FacilityComponent } from './UserComponent/facility/facility.component';
+
 
 
 @NgModule({
@@ -48,8 +52,10 @@ import {CheckAuthService} from './check-auth.service'
     HomeComponent,
     PageNotFoundComponent,
     UserHomeComponent,
-    
-    
+    ProfileComponent,
+    HostFunctionComponent,
+    FacilityComponent,
+
   ],
   imports: [
     BrowserModule,

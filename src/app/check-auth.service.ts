@@ -9,12 +9,12 @@ export class CheckAuthService {
 
   constructor() { }
 
-  getToken(){
+  getAdminToken(){
     return !!localStorage.getItem('sessionUsertype');
   }
 
   getTokenUser(){
-    return !!localStorage.getItem('sessionUsertype');
+    return !!localStorage.getItem('sessionUser');
   }
 
 }

@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { MyGuardGuard } from './my-guard.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserGuardGuard } from './user-guard.guard';
+import { ProfileComponent } from './UserComponent/profile/profile.component';
 import { UserHomeComponent } from './UserComponent/user-home/user-home.component';
 
 
@@ -36,6 +37,7 @@ import { UserHomeComponent } from './UserComponent/user-home/user-home.component
     {path:'AdminHome',component:HomeComponent,canActivate: [MyGuardGuard]},
     
     {path:'Home',component:UserHomeComponent,canActivate:[UserGuardGuard]},
+    {path:'Profile',component:ProfileComponent,canActivate:[UserGuardGuard]},
     {path:'Login',component:LoginComponent},
 
     {path:'',redirectTo:'/Login',pathMatch:'full'},

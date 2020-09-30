@@ -17,11 +17,11 @@ export class MyGuardGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(!this.CheckAuth.getToken()){
+      if(!this.CheckAuth.getAdminToken()){
         return this.router.navigateByUrl('/404');
       }
       else{  
-          return this.CheckAuth.getToken();
+          return this.CheckAuth.getAdminToken();
       }
   }
   

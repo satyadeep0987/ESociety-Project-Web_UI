@@ -1,0 +1,135 @@
+<app-user-nav></app-user-nav>
+<div class="container">
+    <div class="row">
+    <div class="col-9" [hidden]="showed">
+        <h2>Your Details</h2>
+        <table class="table" >
+            <thead>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col">Owners ID</th>
+                    <td scope="row">{{u.Owner_ID}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">UserName </th>
+                    <td>{{u.Owner_UserName}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Email </th>
+                    <td>{{u.Owener_Email}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">House No</th>
+                    <td>{{u.House_ID}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Society No</th>
+                    <td>{{u.Society_ID}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Owners Name</th>
+                    <td>{{u.Owner_FirstName}} {{u.Owner_Lastname}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Id Proof</th>
+                    <td>{{u.Owner_IDPROOF}}</td>
+                </tr>
+                <tr>
+                    <th scope="col">Owner contact</th>
+                    <td>{{u.Owner_Contact}}</td>
+                </tr> 
+                <tr>  
+                    <th scope="col">Owners Occupation</th>
+                    <td>{{u.Owner_Occupation}}</td>  
+                </tr>
+                <tr>
+                    <th scope="col">Size Of Family</th>
+                    <td>{{u.Owner_NumberOfFamily}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-9" [hidden]="inser">
+        <h2>Update Details</h2>
+        <form #ownerUpdate="ngForm">
+            <table class="table">
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" >Enter UserName: </th>
+                        <td><input type="text" name='Uuname' [(ngModel)]="resUp.Owner_UserName" #Uuname="ngModel" required /></td>
+                            <td><span *ngIf="Uuname.errors?.required">Username cannot be empty</span></td>
+                         
+                    </tr>
+                  
+                    <tr>
+                        <th scope="row" >Enter Email : </th>
+                        <td><input type="email" name='UEmail' [(ngModel)]="resUp.Owener_Email" #UEmail="ngModel" required /></td>
+                            <td><span *ngIf="UEmail.errors?.required">Email cannot be empty</span></td>
+                         
+                    </tr>
+                   
+                   <tr>
+                        <th scope="row" >Enter Contact No: </th>
+                        <td><input type="text" name='Ucontact' [(ngModel)]="resUp.Owner_Contact" #Ucontact="ngModel" required/></td>
+                            <td><span *ngIf="Ucontact.errors?.required">Plz metion details</span></td>
+                         
+                    </tr>
+                    <tr>
+                        <th scope="row" >Enter Owners Occupation: </th>
+                        <td><input type="text" name='Uocc' [(ngModel)]="resUp.Owner_Occupation" #Uocc="ngModel" required/></td>
+                            <td><span *ngIf="Uocc.errors?.required">Plz metion details</span></td>
+                         
+                    </tr>
+                    <tr>
+                        <th scope="row" >Enter No of Members In Family: </th>
+                        <td><input type="number" name='Umember' [(ngModel)]="resUp.Owner_NumberOfFamily" #Umember="ngModel" required/></td>
+                            <td><span *ngIf="Umember.errors?.required">Plz metion details</span></td>
+                         
+                    </tr>
+        
+                    <tr>
+                        <th></th>
+                          <td><input type="button" class="btn btn-dark" [disabled]="ownerUpdate.invalid" (click)="OwnerUpdate()" value="Update"/></td>
+                      </tr>
+                    
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="col-9" [hidden]="updat">
+        <h2>Password Update</h2>
+        <form #PassUpdate="ngForm">
+        <table class="table">
+            <tr>
+                <th scope="row" >Enter old Password: </th>
+                <td><input type="text" name='OUpass' [(ngModel)]="oldpass" #OUpass="ngModel" required/></td>
+                    <td><span *ngIf="OUpass.errors?.required">Old Password cannot be empty</span></td>
+                 
+            </tr>
+            <tr>
+                <th scope="row" >Enter New Password: </th>
+                <td><input type="text" name='NUpass' [(ngModel)]="newpass" #NUpass="ngModel" required/></td>
+                    <td><span *ngIf="NUpass.errors?.required">New Password cannot be empty</span></td>
+                 
+            </tr>
+            <tr>
+                <th></th>
+                  <td><input type="button" class="btn btn-dark" [disabled]="PassUpdate.invalid" (click)="passupdate()" value="Password Update"/></td>
+              </tr>
+        </table>
+    </form>
+    </div>
+    <div class="col-3">
+        <div class="row" style="margin-left: auto; margin-right: auto;"><button type="button" class="btn btn-warning" (click)="show()">Show Details </button></div><span>   </span>
+       <br/>
+        <div class="row" style="margin-left: auto; margin-right: auto;"><button type="button" class="btn btn-success" (click)="insert()">Update Details</button></div>
+      <br/>
+        <div class="row" style="margin-left: auto; margin-right: auto;"><button type="button" class="btn btn-primary" (click)="update()">Update Password</button></div>
+       
+    </div>
+</div>
+   
+</div>

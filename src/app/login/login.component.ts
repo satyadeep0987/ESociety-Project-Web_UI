@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
   CheckLogin():void{
     if(this.insertAuth.type == 'Admin')
@@ -64,7 +65,7 @@ export class LoginComponent implements OnInit {
           AuthReturnClass.msg = this.returnAuth.msg;
           AuthReturnClass.username = this.returnAuth.username;
           AuthReturnClass.Usertype = this.insertAuth.type;
-          localStorage.setItem('sessionUsertype',AuthReturnClass.Usertype);
+          localStorage.setItem('sessionUser',AuthReturnClass.Usertype);
           localStorage.setItem('sessionUserName',AuthReturnClass.username);
           localStorage.setItem('sessionUserId',AuthReturnClass.id.toString());
           alert("Login Sucessfull");
