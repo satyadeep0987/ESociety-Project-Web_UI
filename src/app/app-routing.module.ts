@@ -14,9 +14,12 @@ import { ServiceCategoryComponent } from './Components/service-category/service-
 import { SocietyComponent } from './Components/society/society.component';
 import { UserServiceDetailsComponent } from './Components/user-service-details/user-service-details.component';
 import { LoginComponent } from './login/login.component';
+import { LoginpagecheckGuard } from './loginpagecheck.guard';
 import { MyGuardGuard } from './my-guard.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserGuardGuard } from './user-guard.guard';
+import { CheckbookedComponent } from './UserComponent/checkbooked/checkbooked.component';
+import { HostFunctionComponent } from './UserComponent/host-function/host-function.component';
 import { ProfileComponent } from './UserComponent/profile/profile.component';
 import { UserHomeComponent } from './UserComponent/user-home/user-home.component';
 
@@ -38,10 +41,13 @@ import { UserHomeComponent } from './UserComponent/user-home/user-home.component
     
     {path:'Home',component:UserHomeComponent,canActivate:[UserGuardGuard]},
     {path:'Profile',component:ProfileComponent,canActivate:[UserGuardGuard]},
+    {path:'BookFunction',component:HostFunctionComponent,canActivate:[UserGuardGuard]},
+    {path:'CheckBook',component:CheckbookedComponent,canActivate:[UserGuardGuard]},
     {path:'Login',component:LoginComponent},
 
     {path:'',redirectTo:'/Login',pathMatch:'full'},
     { path: '**', component:PageNotFoundComponent},
+    
   ];
 
 

@@ -105,13 +105,13 @@
         <table class="table">
             <tr>
                 <th scope="row" >Enter old Password: </th>
-                <td><input type="text" name='OUpass' [(ngModel)]="oldpass" #OUpass="ngModel" required/></td>
+                <td><input type="password" name='OUpass' [(ngModel)]="oldpass" #OUpass="ngModel" required/></td>
                     <td><span *ngIf="OUpass.errors?.required">Old Password cannot be empty</span></td>
                  
             </tr>
             <tr>
                 <th scope="row" >Enter New Password: </th>
-                <td><input type="text" name='NUpass' [(ngModel)]="newpass" #NUpass="ngModel" required/></td>
+                <td><input type="password" name='NUpass' [(ngModel)]="newpass" #NUpass="ngModel" required/></td>
                     <td><span *ngIf="NUpass.errors?.required">New Password cannot be empty</span></td>
                  
             </tr>

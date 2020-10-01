@@ -1,0 +1,21 @@
+<app-user-nav></app-user-nav>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table">
+              
+                <tbody>
+                <tr >
+                    <th scope="row">Enter Function ID :</th>
+                    <td><input type="number" name="id" #id/></td>
+                </tr>   
+                <tr>
+                  <th></th>
+                    <td><input type="button" class="btn btn-dark" (click)="checkbooking(id.value)" value="Search"/></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

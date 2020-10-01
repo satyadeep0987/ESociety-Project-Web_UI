@@ -7,14 +7,14 @@ import { CustomFunctionDetailsService } from 'src/app/CustomService/custom-funct
 import { FunctionCategoryService } from 'src/app/CustomService/function-category.service';
 import { OwnerService } from 'src/app/CustomService/owner.service';
 
-
 @Component({
-  selector: 'app-host-function',
-  templateUrl: './host-function.component.html',
-  styleUrls: ['./host-function.component.css']
+  selector: 'app-checkbooked',
+  templateUrl: './checkbooked.component.html',
+  styleUrls: ['./checkbooked.component.css']
 })
-export class HostFunctionComponent implements OnInit {
+export class CheckbookedComponent implements OnInit {
 
+  
   u:CustomOwner;
   
   resUp = new CustomOwner();
@@ -23,9 +23,10 @@ export class HostFunctionComponent implements OnInit {
   funcs:FunctionCategoryService;
   fs:CustomFunctionDetailsService;
   id:number = parseInt(localStorage.getItem('sessionUserId'));
+  ids:number;
   ngZone:NgZone;
   router:Router;
-  result : CustomFunctionCategory[];
+
 
 
   constructor(srv:OwnerService,ngzone:NgZone,router:Router,funcs:FunctionCategoryService, fs:CustomFunctionDetailsService) {
@@ -38,7 +39,7 @@ export class HostFunctionComponent implements OnInit {
 
  ngOnInit(): void {
    this.Show();
-   this.ShowCategory()
+   
  }
 
  Show():void{
@@ -48,25 +49,31 @@ export class HostFunctionComponent implements OnInit {
    })
  }
 
- ShowCategory():void{
-  this.funcs.GetFunctionCategory().subscribe((data:CustomFunctionCategory[])=>{
-    this.result = data;
-  }) 
-}
 
-InsertBookin():void{
-  
-  this.res.Owner_ID = this.id;
-  this.res.Function_Status = 0;
-  console.log(this.res);
-  this.fs.postDetails(this.res).subscribe((data:boolean)=>{
-    if(data){
-      alert("Function Booked ");
+
+
+checkbooking(id:number):void{
+  this.ids = id;
+  this.fs.getbbyIdDetails(this.ids).subscribe((data:CustomFunctionDetails)=>{
+    this.res = data;
+    console.log(this.res);
+    if(this.id == this.res.Owner_ID)
+    {
+      if(this.res.Function_Status == 1){
+        alert("Your fuction booking is Acepted");
+      }
+      else{
+        alert("Your fuction booking is Pending");
+      }
+      
     }
-    window.location.reload();
-   
+    else{
+      alert("Invalid booking ID");
+    }
   })
 }
 
 
+
 }
+

@@ -28,6 +28,7 @@ import {CheckAuthService} from './check-auth.service';
 import { ProfileComponent } from './UserComponent/profile/profile.component';
 import { HostFunctionComponent } from './UserComponent/host-function/host-function.component';
 import { FacilityComponent } from './UserComponent/facility/facility.component';
+import { CheckbookedComponent } from './UserComponent/checkbooked/checkbooked.component';
 
 
 
@@ -55,6 +56,7 @@ import { FacilityComponent } from './UserComponent/facility/facility.component';
     ProfileComponent,
     HostFunctionComponent,
     FacilityComponent,
+    CheckbookedComponent,
 
   ],
   imports: [
